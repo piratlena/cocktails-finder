@@ -1,11 +1,25 @@
-@import "../../styles/variables";
+@use "../../styles/mixins";
+@import "../../index.scss";
 
 .header {
+  position: fixed;
   left: 0;
   right: 0;
   height: 85px;
-  background-color: var(--color-light-gray);
+  background-color: var(--bg-color-primary);
   z-index: 1000;
+  padding-top: 30px;
+  &__logo {
+    text-transform: uppercase;
+    background-color: --color-primary-light;
+    background-image: var(--gradient-second);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    cursor: pointer;
+  }
 }
 .navbar {
   margin: 0 auto;
@@ -14,15 +28,33 @@
   justify-content: space-between;
   right: 0px;
   &__items {
-    max-width: 380px;
+    width: 600px;
     display: flex;
     margin-right: 0px;
+    flex-direction: row;
+    justify-content: space-between;
   }
   &__item {
     cursor: pointer;
     display: block;
     display: flex;
-    flex-direction: column;
-    margin-right: 60px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &:last-child {
+      margin-right: 0px;
+    }
+    &:hover {
+      background-color: var(--bg-color-primary);
+      background-image: var(--gradient-second);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &:focus {
+      color: var(--color-primary-light);
+    }
   }
 }

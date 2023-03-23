@@ -1,0 +1,78 @@
+@use "./styles/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+#root {
+  position: relative;
+}
+
+html {
+  background-color: var(--bg-color-primary);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color-primary);
+}
+
+main > :first-child {
+  padding-top: 5rem;
+
+  @include mixins.respond(mixins.$tablet) {
+    padding-top: 6.5rem;
+  }
+}
+
+#root {
+  background-color: var(--bg-color-primary);
+}
+
+.ubuntu {
+  font-family: "Ubuntu", sans-serif !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --color-primary-bright: #00d6b4;
+  --color-primary-light: #2aa5a0;
+  --bg-color-primary: #222;
+  --bg-color-primary-light: #333;
+  --scrollbar-background: #f0f0f0;
+  --gradient-second: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    #e62632,
+    #00d6b4
+  );
+}
+
+::selection {
+  background-color: #2aa5a0;
+  color: #fff;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #2aa5a0 var(--bg-color-primary);
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2aa5a0;
+  border-radius: 10px;
+  border: 3px solid var(--scrollbar-background);
+}
+
+select::-webkit-scrollbar {
+  display: none;
+}

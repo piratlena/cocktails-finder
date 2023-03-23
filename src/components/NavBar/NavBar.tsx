@@ -1,15 +1,16 @@
 import React from "react";
+import styles from "./NavBar.module.scss";
 
 const NavBar = () => {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <div className="container">
-        <nav className="navbar">
-          <div className="header__logo">TheCocotails</div>
-          <ul className="navbar__items">
-            <li className="navbar__item">Random</li>
-            <li className="navbar__item">A-Z</li>
-            <li className="navbar__item">Your Bar</li>
+        <nav className={styles.navbar}>
+          <div className={styles.header__logo}>TheCocotails</div>
+          <ul className={styles.navbar__items}>
+            <li className={styles.navbar__item}>Random</li>
+            <li className={styles.navbar__item}>A-Z</li>
+            <li className={styles.navbar__item}>Your Bar</li>
           </ul>
         </nav>
       </div>

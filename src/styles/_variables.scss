@@ -3,4 +3,16 @@
   --color-secondary: #00d6b4;
   --color-white: #fff;
   --color-light-gray: #333;
+  --gradient: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  --gradient-second: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    #e62632,
+    #00d6b4
+  );
 }

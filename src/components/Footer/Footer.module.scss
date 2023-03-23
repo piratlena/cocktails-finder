@@ -1,0 +1,39 @@
+@use "../../styles/mixins";
+@import "../../index.scss";
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background: var(--bg-color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  & svg {
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(1px);
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+    &:hover,
+    &:active {
+      background-color: var(--bg-color-primary);
+      background-image: var(--gradient-second);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      & svg {
+        fill: var(--color-primary-light);
+      }
+    }
+  }
+}

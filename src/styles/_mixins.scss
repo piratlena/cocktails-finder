@@ -1,0 +1,69 @@
+// MEDIA QUERY MANAGER
+/*
+< 304 px: smallest (19em)
+< 352 px: small (22em)
+< 500 px: phone (31.25em)
+< 600 px: homePhone (37.5em)
+< 768 px: bootstrapTablet (48em)
+< 1000 px: tablet (62.5em)
+> 1000 px: desktop (62.5em)
+< 1100 px: darkMode (78.125em)
+For computer ONLY: computerScreen
+*/
+$smallest: "smallest";
+$small: "small";
+$phone: "phone";
+$homePhone: "homePhone";
+$bootstrapTablet: "bootstrapTablet";
+$tablet: "tablet";
+$desktop: "desktop";
+$darkMode: "darkMode";
+$computerScreen: "computerScreen";
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == $smallest {
+    @media only screen and (max-width: 19em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $small {
+    @media only screen and (max-width: 22em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $phone {
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $homePhone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $bootstrapTablet {
+    @media only screen and (max-width: 48em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $tablet {
+    @media only screen and (max-width: 62.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $desktop {
+    @media only screen and (min-width: 62.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $darkMode {
+    @media only screen and (max-width: 78.125em) {
+      @content;
+    }
+  }
+  @if $breakpoint == $computerScreen {
+    @media (hover: hover) and (pointer: fine) {
+      @content;
+    }
+  }
+}

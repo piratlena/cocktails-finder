@@ -1,0 +1,41 @@
+@use "../../styles/mixins";
+
+.hero {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.57), #222),
+    url("../../assets/img/hero.jpg") center center/cover no-repeat;
+  width: 100%;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 3.5rem 0;
+
+  @include mixins.respond(mixins.$tablet) {
+    height: 90vh;
+  }
+
+  @include mixins.respond(mixins.$homePhone) {
+    height: auto;
+    padding: 3rem 0;
+  }
+}
+.container {
+  max-width: 50%;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+
+  @include mixins.respond(mixins.$tablet) {
+    max-width: 90%;
+    padding-top: 2rem;
+  }
+
+  @include mixins.respond(mixins.$homePhone) {
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+}
+.search__box {
+  margin-top: 200px;
+}

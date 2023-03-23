@@ -1,3 +1,4 @@
+@use "./mixins";
 @import "normalize.css";
 @import "sanitize.css";
 @import "./components";
@@ -49,3 +50,9 @@ h3 {
   font-size: 24px;
   font-weight: 100;
 }
+// .hero {
+//   width: 100%;
+//   min-height: 100vh;
+//   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), #222),
+//     url("../assets/img/hero.jpg") center center/cover no-repeat;
+// }
