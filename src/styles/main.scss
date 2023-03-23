@@ -1,0 +1,51 @@
+@import "normalize.css";
+@import "sanitize.css";
+@import "./components";
+@import "./variables";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-primary);
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1140px;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 50px;
+  line-height: 58px;
+  font-family: "Lato", sans-serif;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 35px;
+}
+a {
+  text-decoration: none;
+}
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: Lato, sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+}
