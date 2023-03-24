@@ -1,7 +1,7 @@
 @use "../../styles/mixins";
 
 .hero {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.57), #222),
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), #222),
     url("../../assets/img/hero.jpg") center center/cover no-repeat;
   width: 100%;
   background-attachment: fixed;
@@ -38,4 +38,9 @@
 }
 .search__box {
   margin-top: 200px;
+  align-items: center;
+}
+.picture {
+  display: block;
+  margin: 0 auto;
 }

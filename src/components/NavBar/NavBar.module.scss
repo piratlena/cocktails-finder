@@ -1,6 +1,18 @@
 @use "../../styles/mixins";
 @import "../../index.scss";
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -11,16 +23,20 @@
   padding-top: 30px;
   &__logo {
     text-transform: uppercase;
-    background-color: --color-primary-light;
-    background-image: var(--gradient-second);
+
+    background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
     font-size: 24px;
     font-weight: 600;
     line-height: 30px;
+    animation: gradient 10s ease infinite;
+    transform: translate3d(0, 0, 0);
     cursor: pointer;
   }
 }
+
 .navbar {
   margin: 0 auto;
   width: 100%;
@@ -38,7 +54,8 @@
     cursor: pointer;
     display: block;
     display: flex;
-
+    font-family: "Ubuntu";
+    color: var(--text-color-gray);
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
