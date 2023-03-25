@@ -1,0 +1,13 @@
+@use "../../styles/mixins";
+@import "../../index.scss";
+
+.row {
+  @include mixins.respond(mixins.$phone) {
+    padding: 0 3rem;
+  }
+}
+
+.search__box {
+  margin-top: 200px;
+  align-items: center;
+}

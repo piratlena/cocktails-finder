@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/store/store";
 import styles from "./Home.module.scss";
 import Footer from "../../components/Footer/Footer";
 import Search from "../../components/Search/Search";
+import fetchBarItems from "../../redux/actions/getBarItems";
 import Hero from "../../components/Hero/Hero";
 import CoctailSvg from "../../components/Hero/CoctailSvg";
+
 function HomePage() {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchBarItems());
+  }, [navigate]);
   return (
     <>
       <div className={`${styles.hero} hero`}>
