@@ -1,36 +1,33 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState, FC } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Card.module.scss";
+import { ICard } from "../../types/Card";
 
-const Card = (ingredients) => {
+const Card: FC<ICard> = ({ strIngredient1 }) => {
   return (
-    <>
-      {ingredients.map((ingredient) => {
-        <article className={`${styles.card} d-flex flex-column `}>
-          <Link to={`/ingredients/${ingredient.strIngredient1}`}>
-            <img
-              className={`${styles.image} img-fluid`}
-              src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Small.png`}
-              alt={ingredient.strIngredient1}
-            />
-          </Link>
-          <div className={`${styles.content}`}>
-            <div className={`${styles.name} ubuntu fw-bold`}>
-              {ingredient.strIngredient1}
-            </div>
-            <div className={styles.content__inner}>
-              <div>
-                <h4 className="fs-6 fw-normal text-secondary">
-                  First Seen At:{" "}
-                </h4>
-
-                {ingredient.strIngredient1}
-              </div>
-            </div>
+    <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative">
+      <article className={`${styles.card} d-flex flex-column `}>
+        <Link to={`/ingredients/${strIngredient1}`}>
+          <img
+            className={`${styles.image} img-fluid`}
+            src={`https://www.thecocktaildb.com/images/ingredients/${strIngredient1}-Medium.png`}
+            alt={strIngredient1}
+          />
+        </Link>
+        <div className={`${styles.content}`}>
+          <div className={`${styles.name} ubuntu fw-bold`}>
+            {strIngredient1}
           </div>
-        </article>;
-      })}
-    </>
+          <div className={styles.content__inner}></div>
+        </div>
+        <Link
+          to={`/characters/${strIngredient1}`}
+          className={styles["hidden-button"]}
+        >
+          &rarr;
+        </Link>
+      </article>
+    </div>
   );
 };
 

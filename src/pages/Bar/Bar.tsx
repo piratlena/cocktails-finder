@@ -18,7 +18,9 @@ function Bar() {
         <div className="row">
           <div className={`${styles.row} col-lg-8 col-12`}>
             <div className="row justify-content-start">
-              <Card props={ingredients} />
+              {ingredients.map((ingredient) => (
+                <Card {...ingredient} />
+              ))}
             </div>
           </div>
         </div>
