@@ -5,7 +5,7 @@ import { ICard } from "../../types/Card";
 
 const Card: FC<ICard> = ({ strIngredient1 }) => {
   return (
-    <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative">
+    <div className="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 position-relative">
       <article className={`${styles.card} d-flex flex-column `}>
         <Link to={`/ingredients/${strIngredient1}`}>
           <img

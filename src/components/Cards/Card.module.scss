@@ -18,7 +18,7 @@
     &:hover {
       border: 2px solid #0000;
       background: linear-gradient(#222, #222) padding-box,
-        linear-gradient(#ee7752, #e73c7e, #23a6d5, #23d5ab) border-box;
+        linear-gradient(#fe5f1e, #f9cb28) border-box;
 
       & .image {
         transform: translateY(-10%);
@@ -34,13 +34,7 @@
       }
       & .name {
         background-color: var(--bg-color-primary);
-        background-image: linear-gradient(
-          90deg,
-          #ee7752,
-          #e73c7e,
-          #23a6d5,
-          #23d5ab
-        );
+        background-image: linear-gradient(90deg, #ff4d4d, #f9cb28);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -98,7 +92,7 @@
   text-decoration: none;
   font-size: 1.5rem;
   color: #fff;
-  background-image: linear-gradient(90deg, #e3535d, #2aa5a0);
+  background-image: linear-gradient(180deg, #ff4d4d, #f9cb28);
   width: 100%;
   padding-right: 1rem;
   transition: all 0.5s ease;

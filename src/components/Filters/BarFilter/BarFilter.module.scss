@@ -1,0 +1,15 @@
+@use "../../../styles/mixins";
+@import "../../../index.scss";
+
+.accordion {
+  --bs-accordion-bg: var(--bg-color-primary);
+  --bs-accordion-active-color: var(--color-primary);
+
+  --bs-accordion-btn-focus-box-shadow: "";
+  --bs-accordion-active-bg: var(--bg-color-primary);
+  --bs-accordion-btn-focus-border-color: var(--bs-accordion-border-color);
+}
+
+.clear {
+  cursor: pointer;
+}
