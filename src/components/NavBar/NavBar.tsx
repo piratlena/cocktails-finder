@@ -1,8 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./NavBar.module.scss";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const [active, setActive] = useState<number>();
+  const navbarList = [
+    { id: 0, name: "Random", link: "/random" },
+    { id: 1, name: "A - Z", link: "/alphabet" },
+    { id: 2, name: "Your bar", link: "/bar" },
+  ];
+
   return (
     <header className={styles.header}>
       <div className="container">
@@ -12,11 +19,17 @@ const NavBar = () => {
           </Link>
 
           <ul className={styles.navbar__items}>
-            <li className={styles.navbar__item}>Random</li>
-            <li className={styles.navbar__item}>A - Z</li>
-            <Link to="/bar">
-              <li className={styles.navbar__item}>Your Bar</li>
-            </Link>
+            {navbarList.map((list, i) => (
+              <Link to={list.link} key={list.id} onClick={() => setActive(i)}>
+                <li
+                  className={`${styles.navbar__item} ${
+                    active === i ? "activeColor" : ""
+                  }`}
+                >
+                  {list.name}
+                </li>
+              </Link>
+            ))}
           </ul>
         </nav>
       </div>

@@ -1,13 +1,19 @@
 :root {
-  --color-primary: #222;
-  --color-secondary: #00d6b4;
   --color-white: #fff;
   --color-light-gray: #333;
-  --gradient: linear-gradient(
+
+  --text-color-gray: #999999;
+  --bg-color-primary: #222;
+  --bg-color-primary-light: #333;
+  --scrollbar-background: #f0f0f0;
+  --red-color: #ff4d4d;
+  --orange-color: #fe5f1e;
+  --yellow-color: #f9cb28;
+  --yellow-color-second: #fbf976;
+  --orange-gradient: linear-gradient(
     90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
+    var(--red-color),
+    var(--yellow-color)
   );
   --gradient-second: linear-gradient(
     90deg,

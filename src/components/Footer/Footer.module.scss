@@ -1,5 +1,5 @@
 @use "../../styles/mixins";
-@import "../../index.scss";
+@import "../../styles/variables";
 
 .footer {
   text-align: center;
@@ -29,12 +29,12 @@
     &:hover,
     &:active {
       background-color: var(--bg-color-primary);
-      background-image: var(--gradient-second);
+      background-image: var(--orange-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
       & svg {
-        fill: var(--color-primary-light);
+        fill: var(--yellow-color);
       }
     }
   }

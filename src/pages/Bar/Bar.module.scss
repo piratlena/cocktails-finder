@@ -1,5 +1,5 @@
 @use "../../styles/mixins";
-@import "../../index.scss";
+@import "../../styles/variables";
 
 .row {
   @include mixins.respond(mixins.$phone) {

@@ -45,6 +45,7 @@ code {
   --red-color: #ff4d4d;
   --orange-color: #fe5f1e;
   --yellow-color: #f9cb28;
+  --yellow-color-second: #fbf976;
   --orange-gradient: linear-gradient(
     90deg,
     var(--red-color),
@@ -84,4 +85,11 @@ code {
 
 select::-webkit-scrollbar {
   display: none;
+}
+.active {
+  background-color: var(--bg-color-primary);
+  background-image: var(--orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
 }

@@ -6,12 +6,7 @@ import { IFilterSlice } from "../../../types/filters";
 import Category from "../Category/Category";
 
 import styles from "./BarFilter.module.scss";
-import {
-  TYPE_OF_DRINK,
-  TYPE_OF_GLASS,
-  ALCOHOL,
-  FILTEROPTIONS,
-} from "../../../consts/filterConsts";
+import { filterList } from "../../../consts/filterConsts";
 
 const BarFilter: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,18 +18,20 @@ const BarFilter: React.FC = () => {
 
   return (
     <div className="col-lg-4 col-12 mb-5 ">
-      <div className="text-center fw-bold fs-4 mb-2">Filter</div>
+      <div className={`text-center fw-bold fs-4 mb-2 ${styles.filter}`}>
+        Filter
+      </div>
       <div
         onClick={clearHandler}
-        className={`${styles.clear} text-center text-primary text-decoration-underline mb-4`}
+        className={`${styles.clear} text-center text-decoration-underline mb-4`}
       >
         Clear Filters
       </div>
 
-      <div className={`${styles.accordion} accordion`} id="accordion">
-        <Category type={TYPE_OF_DRINK} options={FILTEROPTIONS.TYPE_OF_DRINK} />
-        <Category type={TYPE_OF_GLASS} options={FILTEROPTIONS.TYPE_OF_GLASS} />
-        <Category type={ALCOHOL} options={FILTEROPTIONS.ALCOHOL} />
+      <div className={`${styles.accordion} accordion `} id="accordion">
+        {filterList.map((item, i) => (
+          <Category {...item} key={i} />
+        ))}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const Search = () => {
         className={styles.input}
         placeholder="Find your favorite recipe"
       />
-      <button className={`${styles.btn} btn btn-primary fs-5`}>Search</button>
+      {/* <button className={`${styles.btn} btn btn-primary fs-5`}>Search</button> */}
     </form>
   );
 };

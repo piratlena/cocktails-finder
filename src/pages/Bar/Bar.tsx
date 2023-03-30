@@ -32,7 +32,7 @@ const Bar: React.FC = () => {
 
   return (
     <React.Fragment>
-      <h1 className="text-center mb-3 ubuntu">Characters</h1>
+      <h1 className="text-center mb-3 ubuntu">What is in your bar?</h1>
       <div className="container">
         <div className={styles.search__box}>
           <Search />

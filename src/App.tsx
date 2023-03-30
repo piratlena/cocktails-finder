@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
+import "./styles/bootstrapReset.scss";
 
 import React from "react";
 import { Route, Routes } from "react-router-dom";

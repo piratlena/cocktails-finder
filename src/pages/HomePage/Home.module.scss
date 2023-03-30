@@ -1,4 +1,5 @@
 @use "../../styles/mixins";
+@import "../../styles/animations";
 
 .hero {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), #222),
@@ -43,4 +44,10 @@
 .picture {
   display: block;
   margin: 0 auto;
+  &:hover {
+    animation-name: hithere;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
 }

@@ -5,7 +5,7 @@ import styles from "./Home.module.scss";
 import Footer from "../../components/Footer/Footer";
 import Search from "../../components/Search/Search";
 import fetchBarItems from "../../redux/actions/getBarItems";
-import Hero from "../../components/Hero/Hero";
+import HeroSvg from "../../components/Hero/HeroSvg";
 import CoctailSvg from "../../components/Hero/CoctailSvg";
 
 function HomePage() {
@@ -22,7 +22,7 @@ function HomePage() {
             <Search />
           </div>
           <div className={styles.picture}>
-            <CoctailSvg />
+            <HeroSvg />
           </div>
         </div>
       </div>

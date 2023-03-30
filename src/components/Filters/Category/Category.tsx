@@ -1,41 +1,53 @@
 import { useSelector } from "react-redux";
 
 import getFilters from "../../../redux/selectors/filterSelector";
+import FilterBtn from "../FilterBtn/FilterBtn";
 
 import styles from "./Category.module.scss";
 
-export interface ICategory {
-  type: any;
-  options: any;
-}
-
-const Category: React.FC<ICategory> = ({ type, options }) => {
+const Category: React.FC<any> = ({ name, list, id }) => {
+  console.log(list);
   // const { filter } = useSelector(getFilters);
 
   // const activeFilter = `- ${upperFirstLetter(initialState[type.toLowerCase()])}`;
-
+  console.log(name);
   return (
     <div className="accordion-item">
-      <h2 className="accordion-header" id={`heading${type}`}>
+      <h2 className="accordion-header">
         <button
-          className={`${styles.btn} accordion-button collapsed`}
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target={`#collapse${type}`}
-          aria-expanded="false"
-          aria-controls={`collapse${type}`}
+          data-bs-target="#panelsStayOpen-collapseOne"
+          aria-expanded="true"
+          aria-controls="panelsStayOpen-collapseOne"
         >
-          {/* {type} {name[type.toLowerCase()] ? activeFilter : ""} */}
+          {name}
         </button>
       </h2>
+
       <div
-        id={`collapse${type}`}
+        id="panelsStayOpen-collapseOne"
         className="accordion-collapse collapse"
-        aria-labelledby={`heading${type}`}
+        aria-labelledby="panelsStayOpen-headingOne"
         data-bs-parent="#accordion"
       >
-        <div className={`${styles.body} accordion-body`}>
-          {/* {createFilterBtns(options, type)} */}
+        <div className={` accordion-body`}>
+          {list.map((item: any, i: number) => (
+            <div className="form-check">
+              <input
+                key={i}
+                className={`${styles.input} BTN-${item}`}
+                type="radio"
+                name={item}
+                data-checked="false"
+                readOnly
+              />
+              <label className={`${styles.label} btn-outline-primary`}>
+                {item}
+              </label>
+            </div>
+          ))}
         </div>
       </div>
     </div>
