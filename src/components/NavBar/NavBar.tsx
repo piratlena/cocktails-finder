@@ -9,7 +9,7 @@ const NavBar = () => {
   const navbarList = [
     { id: 0, name: "Random", link: "/random" },
     { id: 1, name: "A - Z", link: "/alphabet" },
-    { id: 2, name: "Your bar", link: "/bar" },
+    { id: 2, name: "All Recipies", link: "/recipies" },
   ];
 
   return (

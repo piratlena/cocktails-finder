@@ -1,12 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import barSlice from "../reducers/barReducer";
+import barSlice from "../reducers/recipiesReducer";
 import paginationSlice from "../reducers/paginationReducer";
 import filterSlice from "../reducers/filterReducer";
 import { useDispatch } from "react-redux";
 
 const store = configureStore({
   reducer: {
-    bar: barSlice,
+    recipies: barSlice,
     pagination: paginationSlice,
     filter: filterSlice,
   },

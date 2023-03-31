@@ -6,6 +6,8 @@ const initialState: IFilterSlice = {
   drink: "",
   glass: "",
   alcohol: "",
+  query: "",
+  isLoading: true,
 };
 
 export const filterSlice = createSlice({
@@ -22,6 +24,9 @@ export const filterSlice = createSlice({
       const inputsArr = document.querySelectorAll("input[data-checked]");
       inputsArr.forEach((inp) => inp.setAttribute("data-checked", "false"));
       return initialState;
+    },
+    setQuery: (state, action: PayloadAction<string>) => {
+      state.query = action.payload;
     },
   },
 });

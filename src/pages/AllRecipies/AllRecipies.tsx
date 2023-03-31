@@ -1,19 +1,19 @@
-import React, { useEffect, useMemo } from "react";
-import styles from "./Bar.module.scss";
+import React, { useMemo } from "react";
+import styles from "./AllRecipies.module.scss";
 import Search from "../../components/Search/Search";
 import Card from "../../components/Cards/Card";
 import Pagination from "../../components/Pgination/Pagination";
 import { useSelector } from "react-redux";
-import getBarItems from "../../redux/selectors/barSelectors";
+import getListRecipies from "../../redux/selectors/recepiesSelectors";
 import getPage from "../../redux/selectors/paginationSelector";
 import { setCurrentPage } from "../../redux/reducers/paginationReducer";
 import { useAppDispatch } from "../../redux/store/store";
 import BarFilter from "../../components/Filters/BarFilter/BarFilter";
 
-const Bar: React.FC = () => {
-  const { itemInBar } = useSelector(getBarItems);
+const AllRecipies: React.FC = () => {
+  const { itemsInList } = useSelector(getListRecipies);
   const { currentPage } = useSelector(getPage);
-  const ingredients = itemInBar;
+  const ingredients = itemsInList;
   const dispatch = useAppDispatch();
 
   const { pagStart, pagEnd } = useMemo(() => {
@@ -32,9 +32,10 @@ const Bar: React.FC = () => {
 
   return (
     <React.Fragment>
-      <h1 className="text-center mb-3 ubuntu">What is in your bar?</h1>
       <div className="container">
+        <h1 className="text-center mb-3 ubuntu">What is in your bar?</h1>
         <div className={styles.search__box}>
+          <h1 className="text-center mb-3 ubuntu">What is in your bar?</h1>
           <Search />
         </div>
 
@@ -54,4 +55,4 @@ const Bar: React.FC = () => {
   );
 };
 
-export default Bar;
+export default AllRecipies;

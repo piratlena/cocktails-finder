@@ -5,6 +5,8 @@ export interface IFilterSlice {
   alcohol: string;
   type?: string;
   value?: any;
+  query: string;
+  isLoading: boolean;
 }
 
 export enum Filters {

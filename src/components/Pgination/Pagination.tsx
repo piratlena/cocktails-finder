@@ -5,7 +5,7 @@ import { setCurrentPage } from "../../redux/reducers/paginationReducer";
 import useResize from "../../hooks/useResize";
 import { ICard } from "../../types/Card";
 import { useSelector } from "react-redux";
-import getBarItems from "../../redux/selectors/barSelectors";
+import getAllRecipies from "../../redux/selectors/recepiesSelectors";
 
 import styles from "./Pagination.module.scss";
 
@@ -16,8 +16,8 @@ export interface IPagination {
 const Pagination: FC<IPagination> = ({ onChangePage, currentPage }) => {
   const width = useResize();
 
-  const { itemInBar } = useSelector(getBarItems);
-  const pageCount = itemInBar.length / 20;
+  const { itemsInList } = useSelector(getAllRecipies);
+  const pageCount = itemsInList.length / 20;
 
   return (
     <ReactPaginate
