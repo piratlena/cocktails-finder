@@ -3,6 +3,7 @@
 
 .form {
   padding: 0 0.5rem;
+  position: relative;
 }
 
 .input {
@@ -30,4 +31,10 @@
     outline: none;
     box-shadow: 0 0 10px rgba(var(--color-primary-bright), 10%);
   }
+}
+.icon {
+  position: absolute;
+  cursor: pointer;
+  right: 9rem;
+  top: 0.8rem;
 }

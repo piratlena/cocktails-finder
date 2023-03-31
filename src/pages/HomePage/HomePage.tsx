@@ -5,8 +5,8 @@ import styles from "./Home.module.scss";
 import Footer from "../../components/Footer/Footer";
 import Search from "../../components/Search/Search";
 import fetchBarItems from "../../redux/actions/getBarItems";
-import HeroSvg from "../../components/Hero/HeroSvg";
-import CoctailSvg from "../../components/Hero/CoctailSvg";
+import HeroSvg from "../../components/CocktailSvg/HeroSvg";
+import CoctailSvg from "../../components/CocktailSvg/CoctailSvg";
 
 function HomePage() {
   const navigate = useNavigate();
