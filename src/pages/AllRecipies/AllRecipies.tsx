@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import styles from "./AllRecipies.module.scss";
 import Search from "../../components/Search/Search";
 import Card from "../../components/Cards/Card";
@@ -9,12 +9,18 @@ import getPage from "../../redux/selectors/paginationSelector";
 import { setCurrentPage } from "../../redux/reducers/paginationReducer";
 import { useAppDispatch } from "../../redux/store/store";
 import BarFilter from "../../components/Filters/BarFilter/BarFilter";
+import getByName from "../../redux/actions/getByName";
+import getAllRecipies from "../../redux/actions/getBarItems";
 
 const AllRecipies: React.FC = () => {
   const { itemsInList } = useSelector(getListRecipies);
   const { currentPage } = useSelector(getPage);
   const ingredients = itemsInList;
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getAllRecipies());
+  }, []);
 
   const { pagStart, pagEnd } = useMemo(() => {
     const pageLimit = Math.ceil(ingredients.length / 5);

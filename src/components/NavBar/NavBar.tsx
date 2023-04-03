@@ -1,10 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./NavBar.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { navigationsRoutes } from "../../routes/routes";
+import { useAppDispatch } from "../../redux/store/store";
+import getAllRecipies from "../../redux/actions/getBarItems";
 import { resetYOffset } from "../../hooks/useScrollCache";
 import HamburgerMenu from "./HamburgerMenu";
 const NavBar = () => {
   const [active, setActive] = useState<number>();
+  const dispatch = useAppDispatch();
+  const location = useLocation();
+
+  const onGetData = () => {
+    dispatch(getAllRecipies());
+  };
 
   const navbarList = [
     { id: 0, name: "Random", link: "/random" },

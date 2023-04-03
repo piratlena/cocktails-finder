@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Search.module.scss";
 import { BsSearch, BsXLg } from "react-icons/bs";
@@ -19,6 +20,7 @@ const Search: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { query } = useSelector(getListRecipies);
   const dispatch = useAppDispatch();
+  const location = useLocation();
 
   const updateSearchValue = React.useCallback(
     debounce((str: string) => {
@@ -37,9 +39,11 @@ const Search: React.FC = () => {
     inputRef.current?.focus();
   };
 
-  useEffect(() => {
-    dispatch(getByName(query));
-  });
+  const onSubmit = () => {
+    if (location.pathname === "/") {
+    }
+  };
+
   console.log(query);
   return (
     <form className={`${styles.form} d-flex justify-content-center mb-5`}>
@@ -51,18 +55,20 @@ const Search: React.FC = () => {
         placeholder="Find your favorite recipe"
         onChange={onChangeInput}
       />
-      <div className={styles.icon}>
-        {value ? (
-          <BsXLg
-            style={{ color: "#f9cb28", width: "25px", height: "25px" }}
-            onClick={onClickClear}
-          />
-        ) : (
-          <BsSearch
-            style={{ color: "#f9cb28", width: "25px", height: "25px" }}
-          />
-        )}
-      </div>
+      <Link to={"/search"}>
+        <div className={styles.icon}>
+          {value ? (
+            <BsXLg
+              style={{ color: "#f9cb28", width: "25px", height: "25px" }}
+              onClick={onClickClear}
+            />
+          ) : (
+            <BsSearch
+              style={{ color: "#f9cb28", width: "25px", height: "25px" }}
+            />
+          )}
+        </div>
+      </Link>
     </form>
   );
 };

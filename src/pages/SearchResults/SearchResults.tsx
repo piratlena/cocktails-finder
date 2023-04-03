@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import { useSelector } from "react-redux";
 import getListRecipies from "../../redux/selectors/recepiesSelectors";
 import getPage from "../../redux/selectors/paginationSelector";
@@ -7,12 +7,18 @@ import { useAppDispatch } from "../../redux/store/store";
 import styles from "./SearchResults.module.scss";
 import Card from "../../components/Cards/Card";
 import Pagination from "../../components/Pgination/Pagination";
+import getByName from "../../redux/actions/getByName";
 
 const SearchResults = () => {
   const { itemsInList } = useSelector(getListRecipies);
   const { currentPage } = useSelector(getPage);
   const ingredients = itemsInList;
   const dispatch = useAppDispatch();
+  const { query } = useSelector(getListRecipies);
+
+  useEffect(() => {
+    dispatch(getByName(query));
+  }, []);
 
   const { pagStart, pagEnd } = useMemo(() => {
     const pageLimit = Math.ceil(ingredients.length / 5);

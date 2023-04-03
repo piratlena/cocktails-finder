@@ -23,6 +23,7 @@ const recipiesSlice = createSlice({
     },
     setQuery(state, action: PayloadAction<string>) {
       state.query = action.payload;
+      state.itemsInList = [];
     },
   },
 });
