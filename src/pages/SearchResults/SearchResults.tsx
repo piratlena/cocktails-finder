@@ -5,7 +5,7 @@ import getPage from "../../redux/selectors/paginationSelector";
 import { setCurrentPage } from "../../redux/reducers/paginationReducer";
 import { useAppDispatch } from "../../redux/store/store";
 import styles from "./SearchResults.module.scss";
-import Card from "../../components/Cards/Card";
+import CardSearchRes from "../../components/Cards/CardSearchRes";
 import Pagination from "../../components/Pgination/Pagination";
 import getByName from "../../redux/actions/getByName";
 
@@ -38,15 +38,15 @@ const SearchResults = () => {
   return (
     <React.Fragment>
       <div className="container">
-        <div className={styles.search__box}>
-          <h1 className="text-center mb-3 ubuntu">Recepies with </h1>
+        <div className={styles.search__result}>
+          <h1 className="text-center mb-3 ubuntu">Recepies with {query} </h1>
         </div>
 
-        <div className="row justify-content-end">
+        <div className="row ">
           <div className={`${styles.row} col-lg-8 col-12`}>
             <div className="row justify-content-end">
               {ingredients.slice(pagStart, pagEnd).map((ingredient) => (
-                <Card {...ingredient} />
+                <CardSearchRes {...ingredient} />
               ))}
             </div>
           </div>

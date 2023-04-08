@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./NavBar.module.scss";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, Link, LinkProps, useLocation } from "react-router-dom";
 import { navigationsRoutes } from "../../routes/routes";
 import { useAppDispatch } from "../../redux/store/store";
 import getAllRecipies from "../../redux/actions/getBarItems";
@@ -24,11 +24,11 @@ const NavBar = () => {
   return (
     <nav className={`${styles.navbar} navbar navbar-expand-lg`}>
       <div className="container">
-        <Link to="/">
+        <NavLink to="/">
           <div className={styles.logo} onClick={resetYOffset}>
             TheCocktails
           </div>
-        </Link>
+        </NavLink>
 
         <HamburgerMenu />
 
@@ -38,15 +38,13 @@ const NavBar = () => {
         >
           <ul className={styles.nav__items}>
             {navbarList.map((list, i) => (
-              <Link to={list.link} key={list.id} onClick={() => setActive(i)}>
-                <li
-                  className={`${styles.nav__item} ${
-                    active === i ? "activeColor" : ""
-                  }`}
-                >
-                  {list.name}
-                </li>
-              </Link>
+              <NavLink
+                to={list.link}
+                key={list.id}
+                onClick={() => setActive(i)}
+              >
+                <li className={`${styles.nav__item} `}>{list.name}</li>
+              </NavLink>
             ))}
           </ul>
         </div>

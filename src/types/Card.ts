@@ -1,5 +1,7 @@
 export interface ICard {
   strIngredient1: string;
+  strDrink: string;
+  strDrinkThumb: string;
 }
 
 export interface ICardRecipe {
