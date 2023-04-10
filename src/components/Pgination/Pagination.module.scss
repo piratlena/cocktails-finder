@@ -9,11 +9,11 @@
 }
 
 .btn {
-  --bs-btn-disabled-bg: var(--color-primary-bright);
-  --bs-btn-disabled-border-color: var(--color-primary-bright);
-  --bs-btn-bg: var(--color-primary-bright);
-  --bs-btn-border-color: var(--color-primary-bright);
-  --bs-btn-hover-bg: var(--color-primary-bright);
+  --bs-btn-disabled-bg: var(--color-primary-light);
+  --bs-btn-disabled-border-color: var(--color-primary-light);
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary-light);
   --bs-btn-hover-border-color: var(--color-primary-light);
   --bs-btn-active-bg: var(--color-primary-dark);
   --bs-btn-active-border-color: var(--color-primary-dark);
@@ -38,7 +38,7 @@
     width: 100%;
     height: 100%;
     font-size: 2.5rem;
-    color: var(--bg-color-primary) !important;
+    color: var(--bg-color-primary-light) !important;
     line-height: 0.5;
     top: 50%;
     left: 50%;
@@ -55,16 +55,18 @@
 }
 
 .page-link {
-  --bs-pagination-active-bg: var(--color-primary-bright);
-  --bs-pagination-active-border-color: var(--color-primary-bright);
-  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(131, 58, 180, 0.25);
-  --bs-pagination-hover-color: var(--color-primary-bright);
-  --bs-pagination-color: #fff;
-
-  --bs-pagination-focus-color: var(--color-primary-bright);
-  --bs-pagination-border-color: var(--color-primary-bright);
-  --bs-pagination-hover-border-color: var(--color-primary-bright);
-  background-color: var(--color-primary-bright);
+  --bs-pagination-active-bg: var(--color-primary-dark);
+  --bs-pagination-active-border-color: var(--color-primary-dark);
+  --bs-pagination-active-color: var(--color-white);
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(191, 222, 66, 0.25);
+  --bs-pagination-hover-color: var(--color-primary-dark);
+  --bs-pagination-color: var(--color-primary-dark);
+  --bs-pagination-hover-bg: rgba(203, 228, 103, 0.25);
+  --bs-pagination-focus-bg: rgba(203, 228, 103, 0.25);
+  --bs-pagination-focus-color: var(--color-primary-dark);
+  --bs-pagination-border-color: var(--color-primary-dark);
+  --bs-pagination-hover-border-color: var(--color-primary-dark);
+  background-color: var(--bg-color-primary-light);
 
   width: 2.5rem;
   display: flex;
@@ -83,5 +85,5 @@
 
 .break {
   align-self: flex-end;
-  color: var(--color-primary-bright);
+  color: var(--color-white);
 }

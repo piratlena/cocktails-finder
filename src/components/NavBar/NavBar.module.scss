@@ -124,3 +124,11 @@ path:nth-child(6) {
 .active path:nth-child(6) {
   transform: translateX(9px) translateY(1px) rotate(45deg);
 }
+
+.activeColor {
+  background-color: var(--bg-color-primary);
+  background-image: var(--orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}

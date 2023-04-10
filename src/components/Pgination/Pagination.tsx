@@ -21,7 +21,7 @@ const Pagination: FC<IPagination> = ({ onChangePage, currentPage }) => {
 
   return (
     <ReactPaginate
-      className={`${styles.pagination} pagination justify-content-end align-items-center my-4`}
+      className={`${styles.pagination} pagination justify-content-center align-items-center my-4`}
       previousLabel="&lsaquo;"
       breakClassName={styles.break}
       nextLabel="&rsaquo;"

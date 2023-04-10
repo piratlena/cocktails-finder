@@ -5,7 +5,9 @@ import { navigationsRoutes } from "../../routes/routes";
 import { useAppDispatch } from "../../redux/store/store";
 import getAllRecipies from "../../redux/actions/getBarItems";
 import { resetYOffset } from "../../hooks/useScrollCache";
+import CustomLink from "./CustomLink";
 import HamburgerMenu from "./HamburgerMenu";
+
 const NavBar = () => {
   const [active, setActive] = useState<number>();
   const dispatch = useAppDispatch();
@@ -38,13 +40,13 @@ const NavBar = () => {
         >
           <ul className={styles.nav__items}>
             {navbarList.map((list, i) => (
-              <NavLink
+              <CustomLink
                 to={list.link}
                 key={list.id}
                 onClick={() => setActive(i)}
               >
                 <li className={`${styles.nav__item} `}>{list.name}</li>
-              </NavLink>
+              </CustomLink>
             ))}
           </ul>
         </div>
