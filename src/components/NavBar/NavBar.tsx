@@ -39,12 +39,8 @@ const NavBar = () => {
           id="navbarNav"
         >
           <ul className={styles.nav__items}>
-            {navbarList.map((list, i) => (
-              <CustomLink
-                to={list.link}
-                key={list.id}
-                onClick={() => setActive(i)}
-              >
+            {navbarList.map((list) => (
+              <CustomLink to={list.link} key={list.id}>
                 <li className={`${styles.nav__item} `}>{list.name}</li>
               </CustomLink>
             ))}

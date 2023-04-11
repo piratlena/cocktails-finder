@@ -21,7 +21,12 @@ const SearchResults = () => {
   }, []);
 
   const { pagStart, pagEnd } = useMemo(() => {
-    const pageLimit = Math.ceil(ingredients.length / 5);
+    let pageLimit;
+    if (ingredients.length > 20) {
+      pageLimit = Math.ceil(ingredients.length / 5);
+    } else {
+      pageLimit = ingredients.length;
+    }
 
     const pagStart = (currentPage - 1) * pageLimit;
     const pagEnd = pagStart + pageLimit;

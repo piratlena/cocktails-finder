@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import React, { useRef, useState, useEffect, FormEvent } from "react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Search.module.scss";
 import { BsSearch, BsXLg } from "react-icons/bs";
@@ -12,6 +12,7 @@ import getByName from "../../redux/actions/getByName";
 import getListRecipies from "../../redux/selectors/recepiesSelectors";
 
 export interface SearchEvent {
+  value: string;
   target: HTMLInputElement;
 }
 
@@ -21,6 +22,7 @@ const Search: React.FC = () => {
   const { query } = useSelector(getListRecipies);
   const dispatch = useAppDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const updateSearchValue = React.useCallback(
     debounce((str: string) => {
@@ -39,14 +41,27 @@ const Search: React.FC = () => {
     inputRef.current?.focus();
   };
 
-  const onSubmit = () => {
+  const onSearch = () => {
     if (location.pathname === "/") {
+      navigate("/search");
     }
+  };
+
+  const submitHandler = (
+    event: FormEvent<HTMLFormElement | HTMLInputElement>
+  ) => {
+    event?.preventDefault();
+    dispatch(resetPage());
+    updateSearchValue(value);
+    onSearch();
   };
 
   console.log(query);
   return (
-    <form className={`${styles.form} d-flex justify-content-center mb-5`}>
+    <form
+      className={`${styles.form} d-flex justify-content-center mb-5`}
+      onSubmit={submitHandler}
+    >
       <input
         value={value}
         ref={inputRef}
