@@ -1,0 +1,36 @@
+@use "../../styles/mixins";
+
+.recipe {
+  margin-top: 150px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: var(--bs-body-color);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.icon {
+  display: inline-block;
+  padding-right: 0.5rem;
+  margin-bottom: -10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  @include mixins.respond(mixins.$bootstrapTablet) {
+    justify-content: space-evenly;
+  }
+}

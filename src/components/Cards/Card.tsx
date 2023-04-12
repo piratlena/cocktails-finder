@@ -21,7 +21,7 @@ const Card: FC<ICard> = ({ strIngredient1 }) => {
           <div className={styles.content__inner}></div>
         </div>
         <Link
-          to={`/characters/${strIngredient1}`}
+          to={`/ingredients/${strIngredient1}`}
           className={styles["hidden-button"]}
         >
           &rarr;

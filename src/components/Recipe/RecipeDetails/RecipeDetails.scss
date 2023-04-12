@@ -1,0 +1,76 @@
+@use "../../../styles/mixins";
+
+.article {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+
+  @include mixins.respond(mixins.$bootstrapTablet) {
+    flex-direction: column;
+  }
+
+  @include mixins.respond(mixins.$phone) {
+    gap: 0rem;
+  }
+}
+
+.image {
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 20%);
+  min-width: 50%;
+  max-width: 20rem;
+  margin: 0 auto 1rem auto;
+  overflow: hidden;
+
+  @include mixins.respond(mixins.$small) {
+    max-width: 15rem;
+  }
+}
+
+.name {
+  font-size: 2rem;
+}
+
+.link {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: var(--bs-body-color);
+  }
+
+  &:hover,
+  &:active {
+    color: var(--color-primary);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+
+  &--left {
+    margin: 0 auto;
+    width: max-content;
+    @include mixins.respond(mixins.$bootstrapTablet) {
+      width: auto;
+      max-width: 100vw;
+    }
+  }
+}
+
+.link-container {
+  @include mixins.respond(mixins.$bootstrapTablet) {
+    margin-bottom: 2rem;
+  }
+}
+
+.status__name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}

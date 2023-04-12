@@ -8,7 +8,7 @@ import List from "./../pages/List/List";
 export const navigationsRoutes = [
   { path: "/", element: HomePage },
   { path: "/search", element: SearchResults },
-  { path: "/:cocktail", element: Cocktail },
+  { path: "/ingredients/:cocktail", element: Cocktail },
   { path: "/recipies", element: AllRecipies },
   { path: "/random", element: Random },
   { path: "/", element: List },
