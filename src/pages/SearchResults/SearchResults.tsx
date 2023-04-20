@@ -9,7 +9,7 @@ import CardSearchRes from "../../components/Cards/CardSearchRes";
 import Pagination from "../../components/Pgination/Pagination";
 import getByName from "../../redux/actions/getByName";
 
-const SearchResults = () => {
+const SearchResults: React.FC = () => {
   const { itemsInList } = useSelector(getListRecipies);
   const { currentPage } = useSelector(getPage);
   const ingredients = itemsInList;

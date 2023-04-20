@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.scss";
 import { ICard } from "../../types/Card";
 
-const Card: FC<ICard> = ({ strDrink, strDrinkThumb }) => {
+const CardSearchRes: React.FC<ICard> = ({
+  strDrink,
+  strDrinkThumb,
+  strIngredient1,
+}) => {
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 col-12 mb-4 position-relative">
       <article className={`${styles.card} d-flex flex-column `}>
@@ -29,4 +33,4 @@ const Card: FC<ICard> = ({ strDrink, strDrinkThumb }) => {
   );
 };
 
-export default Card;
+export default CardSearchRes;

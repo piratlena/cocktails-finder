@@ -1,0 +1,76 @@
+@use "../../styles/mixins";
+@import "../../styles/variables";
+
+.cocktail {
+  margin-top: 150px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: 2rem;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.icon {
+  display: inline-block;
+  padding-right: 0.5rem;
+  margin-bottom: -10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  @include mixins.respond(mixins.$bootstrapTablet) {
+    justify-content: space-evenly;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+
+  &--left {
+    margin: 0 auto;
+    width: max-content;
+    @include mixins.respond(mixins.$bootstrapTablet) {
+      width: auto;
+      max-width: 100vw;
+    }
+  }
+}
+.image {
+  border-radius: 20px;
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.2);
+  margin: 0 auto 1rem;
+  max-width: 20rem;
+  min-width: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.article {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+
+  @include mixins.respond(mixins.$bootstrapTablet) {
+    flex-direction: column;
+  }
+
+  @include mixins.respond(mixins.$phone) {
+    gap: 0rem;
+  }
+}

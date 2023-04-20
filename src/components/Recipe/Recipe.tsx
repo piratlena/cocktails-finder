@@ -45,6 +45,7 @@ function Recipe() {
         }
       );
   }, [apiUrl]);
+  console.log(drink);
 
   // if (error) {
   //   return <div>Error: something went wrong!</div>;
@@ -68,7 +69,7 @@ function Recipe() {
 
   return (
     <div className="container">
-      <div className={`row pt-4 ${styles.recipe}`}>
+      {/* <div className={`row pt-4 ${styles.recipe}`}>
         <div className={`${styles.buttons} col-lg-3 col-12`}>
           <button type="button" className={styles.btn}>
             Return
@@ -77,7 +78,7 @@ function Recipe() {
         <div className="col-lg-9 col-12 position-relative" ref={cardRef}>
           <RecipeDetails {...drink} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

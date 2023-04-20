@@ -1,4 +1,5 @@
 @use "../../styles/mixins";
+@import "../../styles/animations";
 
 .recipe {
   margin-top: 150px;
@@ -33,4 +34,8 @@
   @include mixins.respond(mixins.$bootstrapTablet) {
     justify-content: space-evenly;
   }
+}
+
+.search__result {
+  margin-top: 100px;
 }

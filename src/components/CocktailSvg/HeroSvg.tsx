@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <>
       <svg
-        enable-background="new 0 0 512 512"
+        enableBackground="new 0 0 512 512"
         height="512px"
         id="Cocktail_x5F_drink"
         version="1.1"
@@ -22,7 +22,7 @@ const Hero = () => {
             x2="50%"
             y2="100%"
           >
-            <stop offset="0%" stop-color="#fe5f1e">
+            <stop offset="0%" stopColor="#fe5f1e">
               <animate
                 attributeName="stop-color"
                 values="#fe5f1e; #f9cb28; fe5f1e;"
@@ -31,7 +31,7 @@ const Hero = () => {
               ></animate>
             </stop>
 
-            <stop offset="100%" stop-color="#f9cb28">
+            <stop offset="100%" stopColor="#f9cb28">
               <animate
                 attributeName="stop-color"
                 values="#f9cb28; fe5f1e; f9cb28;"

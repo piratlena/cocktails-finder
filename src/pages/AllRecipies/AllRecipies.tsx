@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import styles from "./AllRecipies.module.scss";
 import Search from "../../components/Search/Search";
 import Card from "../../components/Cards/Card";
+import CardRecipe from "../../components/Cards/CardRecipe";
 import Pagination from "../../components/Pgination/Pagination";
 import { useSelector } from "react-redux";
 import getListRecipies from "../../redux/selectors/recepiesSelectors";

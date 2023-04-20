@@ -20,10 +20,10 @@ export interface ICardRecipe {
   strInstructionsFR: null;
   strInstructionsIT: string;
   strDrinkThumb: string;
-  strIngredient1: string;
-  strIngredient2: string;
-  strIngredient3: string;
-  strIngredient4: string;
+  strIngredient1: any;
+  strIngredient2: any;
+  strIngredient3: any;
+  strIngredient4: any;
   strIngredient5: null;
   strIngredient6: null;
   strIngredient7: null;

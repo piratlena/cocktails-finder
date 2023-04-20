@@ -5,9 +5,9 @@ import { navigationsRoutes } from "../routes";
 const AppRouter: React.FC = () => {
   return (
     <Routes>
-      {navigationsRoutes.map((route) =>
+      {navigationsRoutes.map((route, i) =>
         route.path ? (
-          <Route path={route.path} element={<route.element />} />
+          <Route key={i} path={route.path} element={<route.element />} />
         ) : null
       )}
     </Routes>
